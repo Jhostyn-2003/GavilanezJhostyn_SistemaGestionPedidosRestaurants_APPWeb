@@ -22,15 +22,15 @@
     <!-- Favicons -->
     <link rel="icon" href="{{ url_for('static', filename='Img/IconoFaviconRestaurant.png') }}">
 
-    <!--Estilos agregados a la pagina efecto carrusel  -->
+    <!--Estilos agregados de CSS solo para darle forma a una imagen, mas se utilizo bostrap -->
     <!-- le configuramos el alto de las imagen  y su margin -->
     <style>
         #card-comida {
             width: 18rem;
             height: 18rem;
         }
-      
     </style>
+    <!--Fin de los estilos añadidos alternamente -->
 
 </head>
 
@@ -97,179 +97,50 @@
             </div>
         </div>
     </nav>
+    <!--Fin del Nav-->
 
-
-    <!--Parte 3: Tarjetas de catalogos de los platos tipicos  -->
-    <div class="container-fluid mt-4 " id="catalogo">
+  <!--AQUI ES DONDE SE VA A PONER EL CODIGO DE ACERCA DE -->
+    <!-- Este es el paso de acerca de nos permite verificar la informacion del usuario -->
+    <!--Acerca de la empresa para haer el llamado al boton de acerca de -->
+    <div class="container-fluid mt-4" id="acercade">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="text-center text-primary fw-bold"> Catálogo de Comidas</h1>
+                <!--Añadimos el codigo titulo de nuestra pagina e una imagen -->
+                <h1 class="text-center text-primary fw-bold">¿Quiénes Somos? </h1>
+                <h5 class="text-center text-dark fw-bold">Restaurantes Jhostyn es uno de los restaurante mas populares hoy en día, donde brindamos excelente servicio y una buena atención al cliente, mejorando nuestro sistema de gestión de pedidos. </h5>
+                <img class="card-img-top h-auto w-auto d-block mx-auto" src="../static/Img/LogotipoEncabezadoJ.PNG" alt="logotipo">
             </div>
         </div>
-        <!-- Esta es la tarjeta del ceviche de camaron -->
+        <!-- Tenemos el display flex para que se adapte a dos columnas en la pagina  -->
         <div class="d-flex p-2 justify-content-center gap-5 mt-5">
-            <div class="card  " style="width: 18rem;">
-                <!-- Aqui se hace llamado a una imagen de google-->
-                <img id="card-comida" src="/static/Slides/CevicheCamaron.png" class="card-img-top"
-                    alt="Ceviche de camaron">
-                <div class="card-body">
-                    <h5 class="card-title">CEVICHE DE CAMARÓN</h5>
-                    <p class="card-text ">Plato tipíco está en el Top 1 de los pedidos realizados
-                        <br>
-                        costo $ 6.00 </p>
-                    <!-- Este es un boton que nos dirige a una pagina que tiene mas informacion del detalle de pedido -->
-                    <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
+            <div class="card " style="width: 18rem;">
+                <div class="card-body text-bg-light p-3">
+                    <!-- esta es la tarjeta de mision -->
+                    <h5 class="card-title text-center ">Misión</h5>
+                    <p class="card-text text-justify"> Ofrecer un gran servicio de gestión de Platos Tipicos, donde
+                        gestionar los pedidos de entrega inmediata o pedidos a domicilio, partes y servicios de alta
+                        calidad y conformidad a través de un excelente equipo de trabajo con el fin de satisfacer las
+                        necesidades de nuestros clientes.</p>
+
                 </div>
             </div>
+            <!-- esta es la tarjeta de vision -->
+            <div class="card " style="width: 18rem;">
+                <div class="card-body text-bg-light p-3">
+                    <h5 class="card-title text-center">Visión</h5>
+                    <p class="card-text  text-justify"> La visión de nuestro Restaurants Jhostyn es ser la primera
+                        opción de los clientes actuales y futuros, satisfaciendo sus necesidades y requerimientos.
+                        Además ser reconocida en el ámbito nacional, por la calidad de sus servicios, atención, y
+                        mantenerse líder de competitividad en el mercado de entrega inmediata de pedidos de forma rápida
+                        y segura.</p>
 
-            <!-- Esta es una tarjeta de llapingachos-->
-            <div class="card" style="width: 18rem;">
-                <!-- Aqui se hace llamado a una imagen de ststic-->
-                <img id="card-comida" src="/static/Slides/Llapingachos.png" class="card-img-top" alt="llapingachos">
-                <div class="card-body">
-                    <h5 class="card-title">LLAPINGACHOS</h5>
-                    <p class="card-text ">PLato típico está en el Top 2 de los pedidos realizados
-                        <br>
-                        Costo $ 3.00
-                    </p>
-                    <!-- este es un boton que nos redirige a una pagina a la informacion del detalle de pedido  -->
-                    <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
-                </div>
-            </div>
-
-            <!-- esta es la tarjeta de seco de pollo -->
-            <div class="card" style="width: 18rem;">
-                <!-- Aqui se hace llamado a una imagen de de estatic -->
-                <img id="card-comida" src="/static/Slides/SecoDePollo.png " class="card-img-top" alt="seco de pollo">
-                <div class="card-body">
-                    <h5 class="card-title">SECO DE POLLO</h5>
-                    <p class="card-text">Plato Típico está en el Top 2 de los pedidos realizados
-                        <br>
-                        Costo $ 2.50
-
-                    </p>
-                    <!-- este es un boton que nos redirije a una pagina -->
-                    <a href="./pedidos" class="btn bg-primary text-white d-flex justify-content-center">Comprar </a>
                 </div>
             </div>
         </div>
     </div>
 
 
-      <!--Parte 3: Tarjetas de catalogos de los postress   -->
-      <div class="container-fluid mt-4 " id="catalogo">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1 class="text-center text-primary fw-bold"> Postres </h1>
-            </div>
-        </div>
-        <!-- Esta es la tarjeta del postre come y bebe  -->
-        <div class="d-flex p-2 justify-content-center gap-5 mt-5">
-            <div class="card  " style="width: 18rem;">
-                <!-- Aqui se hace llamado a una imagen estan estatics-->
-                <img id="card-comida" src="/static/Img/ComeBebe.png" class="card-img-top"
-                    alt="COME Y BEBE">
-                <div class="card-body">
-                    <h5 class="card-title">COME Y BEBE</h5>
-                    <p class="card-text ">POSTRE tipíco está en el Top 4 de los pedidos realizados
-                        <br>
-                        costo $ 1.50 </p>
-                    <!-- Este es un boton que nos dirige a una pagina que tiene mas informacion del detalle de pedido -->
-                    <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
-                </div>
-            </div>
-
-            <!-- Esta es una tarjeta del postre helados a la paila-->
-            <div class="card" style="width: 18rem;">
-                <!-- Aqui se hace llamado a una imagen de static-->
-                <img id="card-comida" src="/static/Img/HeladosPaila.png" class="card-img-top" alt="HELADOS DE PAILA">
-                <div class="card-body">
-                    <h5 class="card-title">HELADOS A LA PAILA</h5>
-                    <p class="card-text ">Postre típico está en el Top 5 de los pedidos realizados
-                        <br>
-                        Costo $ 0.80
-                    </p>
-                    <!-- este es un boton que nos redirige a una pagina a la informacion del detalle de pedido  -->
-                    <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
-                </div>
-            </div>
-
-            <!-- esta es la tarjeta del postre de morocho  -->
-            <div class="card" style="width: 18rem;">
-                <!-- Aqui se hace llamado a una imagen de de estatic -->
-                <img id="card-comida" src="/static/Img/Morocho.png " class="card-img-top" alt="Morocho">
-                <div class="card-body">
-                    <h5 class="card-title">MOROCHO</h5>
-                    <p class="card-text">Postre Típico está en el Top 6 de los pedidos realizados
-                        <br>
-                        Costo $ 1.00
-
-                    </p>
-                    <!-- este es un boton que nos redirije a una pagina -->
-                    <a href="./pedidos" class="btn bg-primary text-white d-flex justify-content-center">Comprar </a>
-                </div>
-            </div>
-        </div>
-    </div>
- 
-  <!--Parte 3: Tarjetas de catalogos de los refrescos  -->
-  <div class="container-fluid mt-4 " id="catalogo">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1 class="text-center text-primary fw-bold">Refresco </h1>
-        </div>
-    </div>
-    <!-- Esta es la tarjeta del refresco de mora -->
-    <div class="d-flex p-2 justify-content-center gap-5 mt-5">
-        <div class="card  " style="width: 18rem;">
-            <!-- Aqui se hace llamado a una imagen de google-->
-            <img id="card-comida" src="/static/Img/JugoMora.png" class="card-img-top"
-                alt="jugo de mora">
-            <div class="card-body">
-                <h5 class="card-title">JUGO DE MORA </h5>
-                <p class="card-text "> Este refresco está en el Top 7 de los pedidos realizados
-                    <br>
-                    costo $ 1.00 </p>
-                <!-- Este es un boton que nos dirige a una pagina que tiene mas informacion del detalle de pedido -->
-                <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
-            </div>
-        </div>
-
-        <!-- Esta es una tarjeta de naranja-->
-        <div class="card" style="width: 18rem;">
-            <!-- Aqui se hace llamado a una imagen de ststic-->
-            <img id="card-comida" src="/static/Img/JugoNaranja.png" class="card-img-top" alt="jugo de naranja">
-            <div class="card-body">
-                <h5 class="card-title">JUGO DE NARANJA</h5>
-                <p class="card-text ">Este refresco está en el Top 8 de los pedidos realizados
-                    <br>
-                    Costo $ 1.00
-                </p>
-                <!-- este es un boton que nos redirige a una pagina a la informacion del detalle de pedido  -->
-                <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
-            </div>
-        </div>
-
-        <!-- esta es la tarjeta del refresco de tamarindo  -->
-        <div class="card" style="width: 18rem;">
-            <!-- Aqui se hace llamado a una imagen de de estatic -->
-            <img id="card-comida" src="/static/Img/JugoTamarindo.png " class="card-img-top" alt="Jugo de Tamarindo">
-            <div class="card-body">
-                <h5 class="card-title">JUGO DE TAMARINDO</h5>
-                <p class="card-text">Este refresco está en el Top 10 de los pedidos realizados
-                    <br>
-                    Costo $ 1.15
-
-                </p>
-                <!-- este es un boton que nos redirije a una pagina -->
-                <a href="./pedidos" class="btn bg-primary text-white d-flex justify-content-center">Comprar </a>
-            </div>
-        </div>
-    </div>
-</div>
-  
-
-
+  <!--AQUI ES DONDE FINALIZA EL CODIGO -->
 
    
     <!-- Ultimo Paso : Parte del Footer o Nav -->
@@ -442,6 +313,7 @@
         <!-- Copyright -->
     </footer>
     <!-- Footer -->
+
 
     <!--Esto es codigo Javascript que utiliza la pagina de Boostrap para algunas funcionalidades  -->
 
