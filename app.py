@@ -143,6 +143,7 @@ def panelAcercaDe():
     return render_template('/acercaDe.html')
 
 
-# ejecutar del main principal de la pagina To DO local host
+# ejecutar del main principal de la pagina To DO local host - version final del proyecto
 if __name__ == '__main__':
     app.run(debug=True)
+  
