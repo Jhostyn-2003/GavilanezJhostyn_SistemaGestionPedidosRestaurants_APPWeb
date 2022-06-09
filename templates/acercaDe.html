@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP Restaurante Jhostyn</title>
+
+    <!--Esta es una libreria de iconos de Boostraps -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <!--Librerias de CSS y Javascript  de Boosttraps -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+
+    <!-- Favicons -->
+    <link rel="icon" href="{{ url_for('static', filename='Img/IconoFaviconRestaurant.png') }}">
+
+    <!--Estilos agregados a la pagina efecto carrusel  -->
+    <!-- le configuramos el alto de las imagen  y su margin -->
+    <style>
+        #card-comida {
+            width: 18rem;
+            height: 18rem;
+        }
+      
+    </style>
+
+</head>
+
+<body>
+
+    <!--Parte 1: Nabvar  -->
+    <!--Aqui se encuentra los botones de nuestra pagina web que nos dirige a la misma  -->
+    <nav class="navbar navbar-expand-lg navbar-light p-2 mb-4 bg-primary ">
+        <div class="container-fluid ">
+            <a class="navbar-brand  " href="#">
+                <!--Aqui se pone el link de la imagen que representa la pagina web-->
+                <img src="../static/Img/IconoRes.PNG" width="30" height="30" alt="">
+                Restaurante Jhostyn</a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon d-flex justify-content-md-end"></span>
+            </button>
+            <!--Aqui se pone el display flex para que nuestra pagina tenga una buena dinamicidad con respecto al diseño, es 
+            decir, para que el titulo quede de un lado y los botones de otro lado -->
+            <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav ">
+                    <!-- Aqui es el inicio de nuestra pagina -->
+                    <a class="nav-link active text-black " aria-current="page" href="./home">Home</a>
+                    <!-- Aqui se llama al apartado de catalogos de la Comida -->
+                    <a class="nav-link text-light" href="./catalogo">Catálogo</a>
+                    <!-- Aqui se llama al apartado van los formularios de nuestros pedidos -->
+                    <a class="nav-link text-light" href="./pedidos">Pedidos</a>
+                    <!-- Aqui se llama al apartado de nuestros servicios -->
+                    <a class="nav-link text-light" href="./NuestrosServicios">Nuestros Servicios</a>
+                    <!-- Aqui se llama al apartado de testimonios-->
+                    <a class="nav-link text-light" href="./testimonios">Testimonios</a>
+                    <!--Aqui se llama al apartado acerca de Contacto-->
+                    <a class="nav-link text-light" href="./Contactanos">Contactanos</a>
+                    <!--Aqui se llama al Apartado de Acerca de-->
+                    <a class="nav-link text-light" href="./acercaDe">Acerca de</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg>Login
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./home">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg>Perfil</a></li>
+                            <li><a class="dropdown-item" href="/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                        <path fill-rule="evenodd"
+                                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                    </svg>Salir</a></li>
+                        </ul>
+                    </li>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--Parte 3: Tarjetas de catalogos de los platos tipicos  -->
+    <div class="container-fluid mt-4 " id="catalogo">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center text-primary fw-bold"> Catálogo de Comidas</h1>
+            </div>
+        </div>
+        <!-- Esta es la tarjeta del ceviche de camaron -->
+        <div class="d-flex p-2 justify-content-center gap-5 mt-5">
+            <div class="card  " style="width: 18rem;">
+                <!-- Aqui se hace llamado a una imagen de google-->
+                <img id="card-comida" src="/static/Slides/CevicheCamaron.png" class="card-img-top"
+                    alt="Ceviche de camaron">
+                <div class="card-body">
+                    <h5 class="card-title">CEVICHE DE CAMARÓN</h5>
+                    <p class="card-text ">Plato tipíco está en el Top 1 de los pedidos realizados
+                        <br>
+                        costo $ 6.00 </p>
+                    <!-- Este es un boton que nos dirige a una pagina que tiene mas informacion del detalle de pedido -->
+                    <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Esta es una tarjeta de llapingachos-->
+            <div class="card" style="width: 18rem;">
+                <!-- Aqui se hace llamado a una imagen de ststic-->
+                <img id="card-comida" src="/static/Slides/Llapingachos.png" class="card-img-top" alt="llapingachos">
+                <div class="card-body">
+                    <h5 class="card-title">LLAPINGACHOS</h5>
+                    <p class="card-text ">PLato típico está en el Top 2 de los pedidos realizados
+                        <br>
+                        Costo $ 3.00
+                    </p>
+                    <!-- este es un boton que nos redirige a una pagina a la informacion del detalle de pedido  -->
+                    <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
+                </div>
+            </div>
+
+            <!-- esta es la tarjeta de seco de pollo -->
+            <div class="card" style="width: 18rem;">
+                <!-- Aqui se hace llamado a una imagen de de estatic -->
+                <img id="card-comida" src="/static/Slides/SecoDePollo.png " class="card-img-top" alt="seco de pollo">
+                <div class="card-body">
+                    <h5 class="card-title">SECO DE POLLO</h5>
+                    <p class="card-text">Plato Típico está en el Top 2 de los pedidos realizados
+                        <br>
+                        Costo $ 2.50
+
+                    </p>
+                    <!-- este es un boton que nos redirije a una pagina -->
+                    <a href="./pedidos" class="btn bg-primary text-white d-flex justify-content-center">Comprar </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <!--Parte 3: Tarjetas de catalogos de los postress   -->
+      <div class="container-fluid mt-4 " id="catalogo">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center text-primary fw-bold"> Postres </h1>
+            </div>
+        </div>
+        <!-- Esta es la tarjeta del postre come y bebe  -->
+        <div class="d-flex p-2 justify-content-center gap-5 mt-5">
+            <div class="card  " style="width: 18rem;">
+                <!-- Aqui se hace llamado a una imagen estan estatics-->
+                <img id="card-comida" src="/static/Img/ComeBebe.png" class="card-img-top"
+                    alt="COME Y BEBE">
+                <div class="card-body">
+                    <h5 class="card-title">COME Y BEBE</h5>
+                    <p class="card-text ">POSTRE tipíco está en el Top 4 de los pedidos realizados
+                        <br>
+                        costo $ 1.50 </p>
+                    <!-- Este es un boton que nos dirige a una pagina que tiene mas informacion del detalle de pedido -->
+                    <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Esta es una tarjeta del postre helados a la paila-->
+            <div class="card" style="width: 18rem;">
+                <!-- Aqui se hace llamado a una imagen de static-->
+                <img id="card-comida" src="/static/Img/HeladosPaila.png" class="card-img-top" alt="HELADOS DE PAILA">
+                <div class="card-body">
+                    <h5 class="card-title">HELADOS A LA PAILA</h5>
+                    <p class="card-text ">Postre típico está en el Top 5 de los pedidos realizados
+                        <br>
+                        Costo $ 0.80
+                    </p>
+                    <!-- este es un boton que nos redirige a una pagina a la informacion del detalle de pedido  -->
+                    <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
+                </div>
+            </div>
+
+            <!-- esta es la tarjeta del postre de morocho  -->
+            <div class="card" style="width: 18rem;">
+                <!-- Aqui se hace llamado a una imagen de de estatic -->
+                <img id="card-comida" src="/static/Img/Morocho.png " class="card-img-top" alt="Morocho">
+                <div class="card-body">
+                    <h5 class="card-title">MOROCHO</h5>
+                    <p class="card-text">Postre Típico está en el Top 6 de los pedidos realizados
+                        <br>
+                        Costo $ 1.00
+
+                    </p>
+                    <!-- este es un boton que nos redirije a una pagina -->
+                    <a href="./pedidos" class="btn bg-primary text-white d-flex justify-content-center">Comprar </a>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+  <!--Parte 3: Tarjetas de catalogos de los refrescos  -->
+  <div class="container-fluid mt-4 " id="catalogo">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center text-primary fw-bold">Refresco </h1>
+        </div>
+    </div>
+    <!-- Esta es la tarjeta del refresco de mora -->
+    <div class="d-flex p-2 justify-content-center gap-5 mt-5">
+        <div class="card  " style="width: 18rem;">
+            <!-- Aqui se hace llamado a una imagen de google-->
+            <img id="card-comida" src="/static/Img/JugoMora.png" class="card-img-top"
+                alt="jugo de mora">
+            <div class="card-body">
+                <h5 class="card-title">JUGO DE MORA </h5>
+                <p class="card-text "> Este refresco está en el Top 7 de los pedidos realizados
+                    <br>
+                    costo $ 1.00 </p>
+                <!-- Este es un boton que nos dirige a una pagina que tiene mas informacion del detalle de pedido -->
+                <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
+            </div>
+        </div>
+
+        <!-- Esta es una tarjeta de naranja-->
+        <div class="card" style="width: 18rem;">
+            <!-- Aqui se hace llamado a una imagen de ststic-->
+            <img id="card-comida" src="/static/Img/JugoNaranja.png" class="card-img-top" alt="jugo de naranja">
+            <div class="card-body">
+                <h5 class="card-title">JUGO DE NARANJA</h5>
+                <p class="card-text ">Este refresco está en el Top 8 de los pedidos realizados
+                    <br>
+                    Costo $ 1.00
+                </p>
+                <!-- este es un boton que nos redirige a una pagina a la informacion del detalle de pedido  -->
+                <a href="./pedidos" class="btn  bg-primary text-white d-flex justify-content-center">Comprar</a>
+            </div>
+        </div>
+
+        <!-- esta es la tarjeta del refresco de tamarindo  -->
+        <div class="card" style="width: 18rem;">
+            <!-- Aqui se hace llamado a una imagen de de estatic -->
+            <img id="card-comida" src="/static/Img/JugoTamarindo.png " class="card-img-top" alt="Jugo de Tamarindo">
+            <div class="card-body">
+                <h5 class="card-title">JUGO DE TAMARINDO</h5>
+                <p class="card-text">Este refresco está en el Top 10 de los pedidos realizados
+                    <br>
+                    Costo $ 1.15
+
+                </p>
+                <!-- este es un boton que nos redirije a una pagina -->
+                <a href="./pedidos" class="btn bg-primary text-white d-flex justify-content-center">Comprar </a>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+
+
+   
+    <!-- Ultimo Paso : Parte del Footer o Nav -->
+    <!--Footer o NAv -->
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Conéctate con nosotras en las redes sociales:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <!--Este es un enlace de Whatssap -->
+                <a href="https://api.whatsapp.com/send/?phone=5930978939742&text&app_absent=0" class="me-4 text-reset "
+                    target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path
+                            d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                    </svg>
+                </a>
+                <!--Este es un enlace de Google, en este caso solo me lleva a un enlace de la pagina de google-->
+                <a href="https://www.google.com/" class="me-4 text-reset " target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-google" viewBox="0 0 16 16">
+                        <path
+                            d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                    </svg>
+                </a>
+                <!--Este es un enlace de github, en este caso de mi repositorio donde se encuentra el proyecto -->
+                <a href="https://github.com/Jhostyn-2003" class="me-4 text-reset" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-github" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links donde tenemos otros enlaces de la pagina, no estan funcionales   -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z" />
+                            </svg> Restaurants Jhostyn - Sistema De Gestión de Pedidos
+                        </h6>
+                        <p>
+                            Es un restaurante que nos permite realizar pedidos, ya sea para envíos a domicilio o
+                            para un
+                            pedido al instante, ya que hoy en día es el restaurante número 1 del país.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column  para establecer las columnas de cada elementos -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            catalogo
+                        </h6>
+                        <p>
+                            <!--Link de que nos guia al catalogo del plato mencionado-->
+                            <a href="./catalogo" class="text-reset">Ceviche Camarón</a>
+                        </p>
+                        <p>
+                            <!--Link de que nos guia al catalogo del plato mencionado-->
+                            <a href="./catalogo" class="text-reset">Seco de Pollo</a>
+                        </p>
+                        <p>
+                            <!--Link de que nos guia al catalogo del plato mencionado-->
+                            <a href="./catalogo" class="text-reset">Llapingacho</a>
+                        </p>
+                        <p>
+                            <!--Link de que nos guia al catalogo del plato mencionado-->
+                            <a href="./catalogo" class="text-reset">Otros... </a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column  se divide en columnas -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            links
+                        </h6>
+                        <p>
+                            <!--Link de que nos guia a las paginas mencionadas-->
+                            <a href="./catalogo" class="text-reset">Catálogo</a>
+                        </p>
+                        <p>
+                            <!--Link de que nos guia a las paginas mencionadas-->
+                            <a href="./pedidos" class="text-reset">Pedidos</a>
+                        </p>
+                        <p>
+                            <!--Link de que nos guia a las paginas mencionadas-->
+                            <a href="./acercaDe" class="text-reset">Aceca De</a>
+                        </p>
+                        <p>
+                            <!--Link de que nos guia a las paginas mencionadas-->
+                            <a href="./Contactanos" class="text-reset">Help !</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column  se divide en columnas -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contact
+                        </h6>
+                        <!-- Aqui va el nombre de la direccion  -->
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-map" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z" />
+                            </svg> Ventanas, Ecuador, 2022</p>
+                        <p>
+                            <!-- aqui va el gmail de nuestro restaurante  -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                            </svg>
+                            RestaurantsJhostyn@gmail.com
+                        </p>
+                        <!-- aqui va nuestro numero celular, esta la ruta del celular esta valida envio correcto -->
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone-x" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                <path fill-rule="evenodd"
+                                    d="M11.146 1.646a.5.5 0 0 1 .708 0L13 2.793l1.146-1.147a.5.5 0 0 1 .708.708L13.707 3.5l1.147 1.146a.5.5 0 0 1-.708.708L13 4.207l-1.146 1.147a.5.5 0 0 1-.708-.708L12.293 3.5l-1.147-1.146a.5.5 0 0 1 0-.708z" />
+                            </svg> 0978939742 </p>
+                        <!-- aqui va la el numero del celular convencional  -->
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone-x" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                <path fill-rule="evenodd"
+                                    d="M11.146 1.646a.5.5 0 0 1 .708 0L13 2.793l1.146-1.147a.5.5 0 0 1 .708.708L13.707 3.5l1.147 1.146a.5.5 0 0 1-.708.708L13 4.207l-1.146 1.147a.5.5 0 0 1-.708-.708L12.293 3.5l-1.147-1.146a.5.5 0 0 1 0-.708z" />
+                            </svg>+ 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright del footer  -->
+        <div class="text-center p-4 bg-primary text-white" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2022, Restaurants Jhostyn
+
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!--Esto es codigo Javascript que utiliza la pagina de Boostrap para algunas funcionalidades  -->
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
